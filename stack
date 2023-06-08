@@ -1,0 +1,28 @@
+'''
+Dynamic10.
+Дан указатель P1 на вершину непустого стека.
+Создать два новых стека, переместив в первый из них все элементы исходного стека с четными значениями,
+а во второй — с нечетными (элементы в новых стеках будут располагаться в порядке, обратном исходному; один из этих стеков может оказаться пустым).
+Вывести адреса вершин полученных стеков (для пустого стека вывести NIL). Операции выделения и освобождения памяти не использовать.
+
+'''
+from random import randint
+myStack_first = []
+myStack_second = []
+
+for i in range(10):
+    myStack_first.append(randint(1, 20))
+    myStack_second.append(randint(1, 20))
+
+
+val = myStack_first.pop()
+
+
+for val in myStack_first:
+    if val % 2 == 0:
+        myStack_second.append(val)
+        print(myStack_second)
+    else:
+        myStack_first.append(val)
+        print(myStack_first)
+        break
